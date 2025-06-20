@@ -1,0 +1,134 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.game-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.balance-area {
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+#coin-balance {
+    font-weight: bold;
+    color: gold; /* Цвет монет */
+}
+
+button {
+    padding: 12px 25px;
+    margin: 8px 0;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    outline: none; /* Убираем стандартный контур при фокусе */
+}
+
+button:active {
+    transform: scale(0.98); /* Небольшое сжатие при нажатии */
+}
+
+
+#add-coins-button {
+    background-color: #4CAF50; /* Зеленый */
+    color: white;
+}
+
+#add-coins-button:hover {
+    background-color: #45a049;
+}
+
+#play-button {
+    background-color: #008CBA; /* Синий */
+    color: white;
+    font-size: 1.4em;
+    padding: 15px 35px;
+    margin-top: 20px;
+}
+
+#play-button:hover:not(:disabled) {
+    background-color: #007bb5;
+}
+
+#play-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+
+.result-area {
+    margin: 30px auto;
+    width: 120px;
+    height: 120px;
+    border: 6px solid #333;
+    border-radius: 20px; /* Более округлые углы */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em; /* Больше цифра */
+    font-weight: bold;
+    background-color: #eee;
+    box-shadow: inset 0 0 15px rgba(0,0,0,0.2); /* Более выраженная тень */
+    transition: transform 0.5s ease-out; /* Плавное завершение \"вращения\" */
+}
+
+/* Класс для добавления эффекта вращения (применяется и снимается JS) */
+.rolling {
+    /* Простая анимация \"вращения\" - изменение масштаба и небольшое вращение */
+    animation: roll 0.5s infinite linear; /* Быстрая повторяющаяся анимация */
+}
+
+@keyframes roll {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(10deg) scale(1.05); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+
+#result-display {
+   color: #333;
+}
+
+#message-area {
+    margin-top: 20px;
+    font-size: 1.1em;
+    min-height: 1.5em; /* Резервируем место, чтобы текст не прыгал */
+}
+
+.win-message {
+    color: #4CAF50; /* Зеленый */
+    font-weight: bold;
+}
+
+.loss-message {
+    color: #f44336; /* Красный */
+}
+
+.info-message {
+     color: #ff9800; /* Оранжевый/Янтарный */
+}
