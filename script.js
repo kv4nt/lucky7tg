@@ -9,7 +9,7 @@ let coinBalance = 100; // Начальный баланс
 const playCost = 10;   // Стоимость игры
 const winPayout = 90;  // Выигрыш при выпадении 7 (добавляется к балансу)
 const replenishAmount = 50; // Сумма пополнения
-
+const maxNumber = 9; // максимальное выпадаемое число. от 0 до 9
 // Функция для обновления отображения баланса
 function updateBalanceDisplay() {
     coinBalanceSpan.textContent = coinBalance;
@@ -87,7 +87,7 @@ function startRollAnimation() {
 
         interval = setInterval(() => {
             // Быстро меняем число в resultDisplay на случайное (от 0 до 10)
-            const randomNum = Math.floor(Math.random() * 11); // Генерирует целое число от 0 до 10
+            const randomNum = Math.floor(Math.random() * maxNumber); // Генерирует целое число от 0 до 10
             resultDisplay.textContent = randomNum;
 
             // Проверяем, не прошло ли время анимации
@@ -96,7 +96,7 @@ function startRollAnimation() {
                 resultArea.classList.remove('rolling'); // Убираем класс CSS анимации
 
                 // Определяем окончательное случайное число (от 0 до 10)
-                const finalNumber = Math.floor(Math.random() * 11);
+                const finalNumber = Math.floor(Math.random() * maxNumber);
                 resultDisplay.textContent = finalNumber; // Показываем финальное число
 
                 resolve(finalNumber); // Завершаем промис, передавая финальное число
